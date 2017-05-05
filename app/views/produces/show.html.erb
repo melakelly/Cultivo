@@ -1,0 +1,55 @@
+<div class="white-background">
+  <div class="row">
+    <div class="product small-4 columns">
+      <%= image_tag("product-image-home.jpg", :alt => "product") %>
+    </div>
+    <div class="product small-8 columns">
+      <h3><%= @produce.title %></h3>
+      
+      <h4>$<%= @produce.price %>0</h4>
+      
+      <p>
+        <strong>Description:</strong>
+        <%= @produce.description %>
+      </p>
+      
+      <select>
+        <option>Select One</option>
+        <option>Weekly</option>
+        <option>Bi-Weekly</option>
+        <option>Monthly</option>
+      </select>
+      <%if signed_in?%>
+        <%=link_to "", class: "button", data: {target: @cart_produces, addUrl: add_to_cart_path(@produce), removeUrl: remove_from_cart_path(@produce)} do%>
+          <span><%=@cart_produces%></span> Purchase
+        <%end%>
+      <% else %>
+        <p>Please <%=link_to "Register", new_user_registration_path%> or <%=link_to "Login", new_user_session_path%> to make a purchase.</li>
+      <%end%>
+          
+</div>
+</div>
+</div>
+
+<div class="green-background">
+  <div class="row">
+    <div class="small-6 columns">
+      <div class="small-4 columns">
+        <%= image_tag("product-image-home.jpg", :alt => "product") %>
+      </div>
+      <div class="small-8 columns">
+        <h3>About the Farm</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <div class="small-6 columns">
+      <div class="small-4 columns">
+        <%= image_tag("product-image-home.jpg", :alt => "product") %>
+      </div>
+      <div class="small-8 columns">
+        <h3>About the Produce</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>   

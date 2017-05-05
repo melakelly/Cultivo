@@ -1,0 +1,31 @@
+<div id="mycart" class="small-10 small-centered medium-8 large-8 column">
+  <div class="p1 glassy-bg mb1 text-center radius-l1 radius-r1">
+    <h4>My Cart</h4>
+    <p class="mb0"> You've selected <span class="cart-count"><%=current_user.cart_count%></span> items!</p>
+  </div>
+
+  <% @cart_produces.each do |produce| %>
+  <div data-equalizer class="cart-produce large-12 column mb1">
+    <div class="column small-2" data-equalizer-watch>
+      <%=link_to produce do%>
+        <%= image_tag("product-image-home.jpg", :alt => "product") %>
+      <%end%>
+    </div>
+    <div class="column small-7" data-equalizer-watch>
+        <p> <%= produce.title %> </p>
+        <%=link_to "" , class: "remove fi-x", data: {targetUrl: remove_from_cart_path(produce)} do%>
+        Remove From Cart
+      <%end%>
+    </div>
+    <div class="column small-3" data-equalizer-watch>
+      <h4>$ <%= produce.price %>0</h4>
+    </div>
+  </div>
+  <%end%>
+</div>
+
+<div class="row">
+    <%= link_to 'Proceed with Purchase', new_order_path, { :class => "button centered"} %>
+</div>
+
+<div class="clear spacer"></div>

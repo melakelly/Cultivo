@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Cultivo" %></title>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Cultivo</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/statics/about">About</a></li>
+          <li><a href="/produces">Products</a></li>
+          <li><a href="/statics/contact">Contact</a></li>
+          <%if signed_in?%>
+          <li><%=link_to current_user.email, edit_user_registration_path%></li>
+          <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+        <%else%>
+          <li><%=link_to "Register", new_user_registration_path%></li>
+          <li><%=link_to "Login", new_user_session_path%></li>
+        <%end%>
+        <li>
+          <%if signed_in?%>
+            <%= link_to cart_path do%>
+              My Cart
+              (<%=current_user.cart_count%>)
+            <%end%>
+          <%end%>
+        </li>
+        </ul>
+      </div>
+    </div>
+    <%= yield %>
+    
+    <footer>
+       <div class="row">
+
+        <div class="small-6 columns">
+        <p>© 2017 Cultivo Delivery</p>
+        </div>       
+
+        <div class="small-6 columns">
+          <p class="right"><a href="/">Home</a> | <a href="/produces">Products</a> | <a href="/statics/about">About</a> | <a href="/statics/contact">Contact</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

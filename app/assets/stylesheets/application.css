@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+    float: left !important;
+}
+.form-container {
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 4px;
+}
+#mycart {
+    overflow: auto;
+    margin: 50px auto;
+}
+.full-background {
+    background: url(hero-register.jpg);
+    background-size:cover;
+    padding: 200px 0;
+}
+img {
+	width:100%;
+	height:auto;
+}
+.product h3 {
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 200;
+}
+.product h4 {
+    color: #7b923c;
+    font-weight: 200;
+    font-size: 22px;
+}
+.product {
+    margin: 30px 0;
+}
+.product-bg-1 {
+	background:url(product-bg-1.jpg);
+}
+.home-bg-1 {
+	background:url(home-bg-1.jpg);
+}
+.hero-home {
+	background:url(hero-home.jpg);
+}
+.hero-about {
+	background:url(hero-about.jpg);
+}
+.hero-contact {
+	background:url(hero-contact.jpg);
+}
+.image-background {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.image-background h1 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 15px black;
+    font-weight: 100;
+    font-size: 70px;
+}
+.right {
+	float: right;
+}
+.center {
+    text-align: center;
+}
+.darken {
+	background: rgba(0,0,0,.65);
+	color: #fff;
+	padding: 100px 0;
+
+}
+.white-background {
+    padding: 75px 0;
+}
+.green-background {
+    padding: 75px 0;
+    background: #7b923c;
+    color: white !important;
+}
+.clear {
+    clear:both;
+}
+.spacer {
+    margin: 50px 0;
+}
+.cart-produce {
+    padding: 30px 0;
+    border-bottom: 1pt solid #ececec;
+}
+.cart-produce p {
+    margin-bottom: 0 !important;
+ }
+.button, input[type="submit"] {
+    display: block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: #7b923c;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    width: 150px;
+    border:0;
+}
+.product img {
+    margin: 10px 0 20px;
+}
+.button.centered {
+    margin: 0 auto;
+}
+footer {
+    background: #2f2f31;
+    padding: 30px 0;
+    color: #fff;
+}
+footer a {
+	color: #fff;
+}
